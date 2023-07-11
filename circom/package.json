@@ -22,7 +22,8 @@
     "eslint-plugin-import": "^2.26.0",
     "fast-check": "^3.2.0",
     "mocha": "^10.1.0",
-    "mocha-logger": "^1.0.8"
+    "mocha-logger": "^1.0.8", 
+    "hardhat-gas-reporter": "^1.0.9"
   },
   "dependencies": {
     "snarkjs": "^0.5.0"
