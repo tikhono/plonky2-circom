@@ -143,9 +143,11 @@ template GlExtExpN(N) {
   cbits.in <== n;
   signal e2[N][2];
   component cextmul[N];
-  component cdouble[N];
+  component cdouble[N-1];
   for (var i = 0; i < N; i++) {
     cextmul[i] = GlExtMul();
+  }
+  for (var i = 0; i < N-1; i++) {
     cdouble[i] = GlExtSquare();
   }
   cextmul[0].a[0] <== 1;
