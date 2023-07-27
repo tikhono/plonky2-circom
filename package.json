@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "hardhat": "^2.13.0",
+    "snarkjs": "^0.6.10"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.3"
+  }
+}
