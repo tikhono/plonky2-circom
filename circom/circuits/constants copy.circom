@@ -7,15 +7,10 @@ function Order() { return 18446744069414584321; }
 function W() { return 7; }
 function DTH_ROOT() { return 18446744069414584320; }
 
-//Every NUM is length of datatype inside VerifierConfig
 function NUM_WIRES_CAP() { return 16; }
-//Merkle cap of LDEs (Low-degree extend) of wire values. 
 function NUM_PLONK_ZS_PARTIAL_PRODUCTS_CAP() { return 16; }
-//Merkle cap of LDEs of Z, in the context of Plonk’s permutation argument.
 function NUM_QUOTIENT_POLYS_CAP() { return 16; }
-//Merkle cap of LDEs of the quotient polynomial components.
 
-//The purported values of each polynomial at a single point.
 function NUM_OPENINGS_CONSTANTS() { return 5; }
 function NUM_OPENINGS_PLONK_SIGMAS() { return 80; }
 function NUM_OPENINGS_WIRES() { return 135; }
@@ -25,11 +20,8 @@ function NUM_OPENINGS_PARTIAL_PRODUCTS() { return 18; }
 function NUM_OPENINGS_QUOTIENT_POLYS() { return 16; }
 
 function NUM_FRI_COMMIT_ROUND() { return 2; }
-//A Merkle cap for each reduced polynomial in the commit phase.
 function FRI_COMMIT_MERKLE_CAP_HEIGHT() { return 16; }
-//Also length beside absence of NUM in the name
 function NUM_FRI_QUERY_ROUND() { return 28; }
-//Query rounds proofs
 function NUM_FRI_QUERY_INIT_CONSTANTS_SIGMAS_V() { return 85; }
 function NUM_FRI_QUERY_INIT_CONSTANTS_SIGMAS_P() { return 11; }
 function NUM_FRI_QUERY_INIT_WIRES_V() { return 135; }
@@ -38,16 +30,11 @@ function NUM_FRI_QUERY_INIT_ZS_PARTIAL_V() { return 20; }
 function NUM_FRI_QUERY_INIT_ZS_PARTIAL_P() { return 11; }
 function NUM_FRI_QUERY_INIT_QUOTIENT_V() { return 16; }
 function NUM_FRI_QUERY_INIT_QUOTIENT_P() { return 11; }
-
-//Evaluations and Merkle proof produced by the prover in a FRI query step.
 function NUM_FRI_QUERY_STEP0_V() { return 16; }
 function NUM_FRI_QUERY_STEP0_P() { return 7; }
 function NUM_FRI_QUERY_STEP1_V() { return 16; }
 function NUM_FRI_QUERY_STEP1_P() { return 3; }
-
-
 function NUM_FRI_FINAL_POLY_EXT_V() { return 16; }
-//The final polynomial in coefficient form.
 
 function NUM_SIGMA_CAPS() { return 16; }
 function GET_SIGMA_CAP(i) {
@@ -119,7 +106,6 @@ function GET_SIGMA_CAP(i) {
   return sc[i];
 }
 
-//Group calculation helper functions
 function NUM_REDUCTION_ARITY_BITS() { return 2; }
 function REDUCTION_ARITY_BITS() {
   var bits[2];
@@ -145,11 +131,9 @@ function G_FROM_DEGREE_BITS() {
 }
 
 function MULTIPLICATIVE_GROUP_GENERATOR() { return 7; }
-//Generator of the entire multiplicative group, i.e. all non-zero elements.
 function PRIMITIVE_ROOT_OF_UNITY_LDE() { return 17776499369601055404; }
 function LOG_SIZE_OF_LDE_DOMAIN() { return 15; }
 function NUM_CHALLENGES() { return 2; }
-//The number of challenge points to generate, for IOPs that have soundness errors of (roughly) degree / |F|.
 function MIN_FRI_POW_RESPONSE() { return 16; }
 function CIRCUIT_DIGEST() {
   var cd[4];
@@ -159,25 +143,14 @@ function CIRCUIT_DIGEST() {
   cd[3] = 772304154736160989;
   return cd;
 }
-//A digest of the “circuit” (i.e. the instance, minus public inputs), which can be used to seed Fiat-Shamir.
-//TODO generate valid digest for our current circuit
 function SPONGE_RATE() { return 8; }
-//For poseidon and keccak are equal
 function SPONGE_CAPACITY() { return 4; }
-//For poseidon and keccak are equal
 function SPONGE_WIDTH() { return 12; }
-//For poseidon and keccak are equal
 function DEGREE_BITS() { return 12; }
-//The degree of the purported codeword, measured in bits.
 function FRI_RATE_BITS() { return 3; }
-//rate = 2^{-rate_bits}.
 function NUM_GATE_CONSTRAINTS() { return 123; }
-//The largest number of constraints imposed by any gate.
 function NUM_PARTIAL_PRODUCTS_TERMS() { return (NUM_OPENINGS_PLONK_SIGMAS() + QUOTIENT_DEGREE_FACTOR() - 1) \ QUOTIENT_DEGREE_FACTOR(); }
-//The number of partial products needed to compute the Z polynomials.
 function QUOTIENT_DEGREE_FACTOR() { return 8; }
-//The degree of the PLONK quotient polynomial.
-//Also, A cap on the quotient polynomial’s degree factor. The actual degree factor is derived systematically, but will never exceed this value.
 function K_IS(i) {
   var k_is[80];
   k_is[0] = 1;
@@ -262,6 +235,4 @@ function K_IS(i) {
   k_is[79] = 9767480182670369297;
   return k_is[i];
 }
-//The {k_i} valued used in S_ID_i in Plonk’s permutation argument.
 function NUM_PUBLIC_INPUTS() { return 68; }
-//Size of publick input
